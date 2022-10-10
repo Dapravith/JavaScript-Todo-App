@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;700&display=swap");
+
+$primary-color-1: hsl(225, 100%, 94%);
+$primary-color-2: hsl(245, 75%, 52%);
+$hover-color: hsl(246, 96%, 71%);
+$neutral-color-1: hsl(225, 100%, 98%);
+$neutral-color-2: hsl(224, 23%, 55%);
+$neutral-color-3: hsl(216, 16%, 12%);
+$neutral-color-4: rgb(160, 157, 157);
+$neutral-color-4: rgb(114, 112, 112);
+
+$Check-Background: url("../images/icon-check.svg"),
+  linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+$top-img-dark: url("../images/bg-desktop-dark.jpg");
+$top-img-dark-sm: url("../images/bg-mobile-dark.jpg");
+$tgl-btn-sun: url("../images/icon-sun.svg");
+$top-img-light: url("../images/bg-desktop-light.jpg");
+$top-img-light-sm: url("../images/bg-mobile-light.jpg");
+$tgl-btn-moon: url("../images/icon-moon.svg");
+
+$font-stack: "Josefin Sans", sans-serif;
+$font-size: 18px;
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: $font-stack;
+  font-size: $font-size;
+  background-color: $primary-color-1;
+  color: $neutral-color-1;
+}
+//moon/sun button
+.changeTheme-light {
+  background: $tgl-btn-moon;
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.changeTheme-dark {
+  background: $tgl-btn-sun;
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.light-theme {
+  width: 100%;
+  height: 225px;
+  background-size: cover;
+  background-image: $top-img-light;
+}
+
+.dark-theme {
+  width: 100%;
+  height: 225px;
+  background-size: cover;
+  background-image: $top-img-dark;
+}
+
+// .container {
+//   height: 100vh;
+//   margin: auto;
+//   // to remove horizontal scrolling
+//   overflow-y: scroll;
+//   overflow-x: hidden;
+//   // overflow-y: hidden
+// }
+p {
+  font-size: small;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $neutral-color-3;
+  padding-top: 50px;
+}
+input:focus {
+  outline: none;
+  color: rgb(114, 112, 112);
+}
+.card {
+  position: relative;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 400px;
+  height: 525px;
+  margin: auto;
+  transform: translateY(70px);
+  z-index: 10;
+}
+
+.flex-card-item-1 {
+  // moon or sun icon and TODO text
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-item-2 {
+  font-family: $font-stack;
+  padding: 20px 215px 20px 45px;
+  border-radius: 5px;
+  border-style: none;
+  margin-top: 10px;
+  background-color: #fff;
+}
+
+.checkbox-inside {
+  position: relative;
+  right: 176px;
+  top: 46px;
+}
+
+.checkbox-round {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.new-item {
+  position: absolute;
+  left: 15px;
+}
+
+
+.new-item:hover {
+  border: 1px solid $hover-color;
+}
+
+.checked {
+  background: $Check-Background;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.todo-done {
+  text-decoration: line-through;
+  color: $neutral-color-4;
+}
+ul {
+  padding: 0px;
+  margin-bottom: 0;
+  li:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+}
+.li-color-light {
+  background-color: white;
+  color: $neutral-color-4;
+}
+
+.li-color-dark {
+  background-color: hsl(214, 22%, 23%);
+  color: white;
+}
+
+ul li {
+  list-style: none;
+  border-bottom: solid #ddd;
+  background-color: white;
+  font-family: $font-stack;
+  color: $neutral-color-3;
+  font-size: medium;
+  padding: 20px 10px 20px 10px; /* top | right | bottom | left */
+  margin: 0;
+}
+
+.cross {
+  background: url("../images/icon-cross.svg");
+  width: 50px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  border: 0px;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+}
+
+#bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 0;
+  .tab {
+    justify-content: space-evenly;
+
+    #show-all {
+      color: $primary-color-2;
+    }
+    #show-all:hover {
+      color: $hover-color;
+    }
+
+    #show-active:hover {
+      color: $neutral-color-3;
+    }
+    #show-completed:hover {
+      color: $neutral-color-3;
+    }
+  }
+
+  #clear:hover {
+    color: $neutral-color-2;
+  }
+  button {
+    background-color: white;
+    border: 0px;
+    cursor: pointer;
+    font-size: small;
+    font-family: $font-stack;
+    color: $neutral-color-4;
+  }
+}
+
+.attribution {
+  font-size: small;
+  color: $neutral-color-3;
+
+  a {
+    color: $neutral-color-3;
+  }
+}
+
+@media (max-width: 599px) {
+   
+  .flex-card-item-1 {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  
+  .card-item-2 {
+    padding: 20px 190px 20px 45px;
+  }
+  
+  .checkbox-inside {
+    right: 168px;
+  }
+ 
+  ul{
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .new-item {
+    left: 25px;
+  }
+
+  .cross{
+    right: 15px;
+  }
+  .light-theme {
+    background-image: $top-img-light-sm;
+    position: fixed;
+    align-items: center;
+  }
+  #bottom{
+    margin: 12px;
+  }
+  .dark-theme {
+    background-image: $top-img-dark-sm;
+    position: fixed;
+    align-items: center;
+  }
+}

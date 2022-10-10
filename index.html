@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta http-equiv="Cache-control" content="public">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="css/style.css">
+  <title>Todo app</title>
+
+</head>
+<body>
+  <div id="main" class="light-theme">
+    <div class="card">
+      <div class="flex-card-item-1">
+        <h1>T O D O</h1>
+        <div id="icon" class="changeTheme-light" onclick="switchTheme()"></div>
+       </div>
+      
+      <button id="btn-color" class="checkbox-round checkbox-inside"></button>
+      <input class="card-item-2" type="text" id="inputText" placeholder="Create a new todo...">
+      
+      <ul id="todos"></ul>
+
+      <div id="bottom">
+        <button id="item-left">items left</button>
+        <div class="tab">
+          <button id="show-all">All</button>
+          <button id="show-active">Active</button>
+          <button id="show-completed">Completed</button>
+        </div>
+        <button id="clear">Clear Completed</button>
+      </div>  
+      <p id="light-text">Drag and drop to reorder list</p>    
+      <div id='text' class="attribution">
+        Coded by <a id="a-text-2" href="https://github.com/Dapravith">@Dapravith</a>.
+      </div>
+    </div>
+ 
+  </div>
+</body>
+<script src="main.js" ></script>
+</html>
